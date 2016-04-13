@@ -10,11 +10,15 @@
 NSMutableArray *paths = [NSMutableArray new];
 
 [paths addObject:[UIImage imageNamed:@"guide_1"]];
+
 [paths addObject:[UIImage imageNamed:@"guide_2"]];
+
 [paths addObject:[UIImage imageNamed:@"guide_3"]];
+
 [paths addObject:[UIImage imageNamed:@"guide_4"]];
 
 [[WDGuideManager shared] showGuideViewWithImages:paths];
+
 [WDGuideManager shared].delegate = self;
 ##就能轻松的创建引导页了
 
