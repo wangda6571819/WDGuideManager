@@ -1,8 +1,11 @@
 # WDGuideManager
-简易的引导页控件,非常容易使用
+##简易的引导页控件,非常容易使用
+![](https://github.com/wangda6571819/WDGuideManager/blob/master/1.png)
+![](https://github.com/wangda6571819/WDGuideManager/blob/master/2.png)
+![](https://github.com/wangda6571819/WDGuideManager/blob/master/3.png)
 
-非常容易使用只需要 
-里面有展示的demo 
+###非常容易使用只需要 
+###里面有展示的demo 
 
 NSMutableArray *paths = [NSMutableArray new];
 
@@ -13,9 +16,9 @@ NSMutableArray *paths = [NSMutableArray new];
 
 [[WDGuideManager shared] showGuideViewWithImages:paths];
 [WDGuideManager shared].delegate = self;
-就能轻松的创建引导页了
+##就能轻松的创建引导页了
 
-可以书写 delegate 方法 （现版本默认有两个按钮登录和注册）
+###可以书写 delegate 方法 （现版本默认有两个按钮登录和注册）
 //点了注册按钮的事件
 (void)wdguideRegisterBtnClick:(UIButton *)btn 
 
