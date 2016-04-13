@@ -8,7 +8,6 @@
 
 #import "WDGuideManager.h"
 
-#define WDcreenBounds [UIScreen mainScreen].bounds
 #define kScreenSize      [[UIScreen mainScreen] bounds]
 #define kScreenWidth                ([[UIScreen mainScreen] bounds].size.width)
 #define kScreenHeight               ([[UIScreen mainScreen] bounds].size.height)
@@ -47,8 +46,8 @@ static NSString *identifier = @"Cell";
     
     self.layer.masksToBounds = YES;
     self.imageView = [[UIImageView alloc] init];
-    self.imageView.frame = WDcreenBounds;
-    self.imageView.center = CGPointMake(WDcreenBounds.size.width / 2, WDcreenBounds.size.height / 2);
+    self.imageView.frame = kScreenSize;
+    self.imageView.center = CGPointMake(kScreenWidth / 2, kScreenHeight / 2);
     
     CGFloat margin = 15;
     CGFloat buttonWidth = (kScreenWidth-5*margin)/2;
@@ -82,8 +81,8 @@ static NSString *identifier = @"Cell";
     [self.contentView addSubview:self.registButton];
     [self.contentView addSubview:self.loginButton];
     
-    [self.registButton setCenter:CGPointMake(WDcreenBounds.size.width / 4, WDcreenBounds.size.height - 100)];
-    [self.loginButton setCenter:CGPointMake(WDcreenBounds.size.width*3 / 4, WDcreenBounds.size.height - 100)];
+    [self.registButton setCenter:CGPointMake(kScreenWidth / 4, kScreenHeight - 100)];
+    [self.loginButton setCenter:CGPointMake(kScreenWidth*3 / 4, kScreenHeight - 100)];
     
 }
 
@@ -138,8 +137,8 @@ static NSString *identifier = @"Cell";
 - (UIPageControl *)pageControl {
     if (_pageControl == nil) {
         _pageControl = [[UIPageControl alloc] init];
-        _pageControl.frame = CGRectMake(0, 0, WDcreenBounds.size.width, 44.0f);
-        _pageControl.center = CGPointMake(WDcreenBounds.size.width / 2, WDcreenBounds.size.height - 60);
+        _pageControl.frame = CGRectMake(0, 0, kScreenWidth, 44.0f);
+        _pageControl.center = CGPointMake(kScreenWidth / 2, kScreenHeight - 60);
         _pageControl.backgroundColor = [UIColor clearColor];
     }
     return _pageControl;
@@ -157,7 +156,7 @@ static NSString *identifier = @"Cell";
         self.images = images;
         self.pageControl.numberOfPages = images.count;
         self.window = [[[UIApplication sharedApplication] delegate] window];
-        UINavigationController *vc = self.window.rootViewController;
+        UINavigationController *vc = (UINavigationController  *)self.window.rootViewController;
         [vc.view addSubview:self.view];
         [vc.view addSubview:self.pageControl];
         
@@ -179,12 +178,12 @@ static NSString *identifier = @"Cell";
     WDGuideViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
     UIImage *img = [self.images objectAtIndex:indexPath.row];
-    CGSize size = [self adapterSizeImageSize:img.size compareSize:WDcreenBounds.size];
+    CGSize size = [self adapterSizeImageSize:img.size compareSize:kScreenSize.size];
     
     //自适应图片位置,图片可以是任意尺寸,会自动缩放.
     cell.imageView.frame = CGRectMake(0, 0, size.width, size.height);
     cell.imageView.image = img;
-    cell.imageView.center = CGPointMake(WDcreenBounds.size.width / 2, WDcreenBounds.size.height / 2);
+    cell.imageView.center = CGPointMake(kScreenWidth / 2, kScreenHeight / 2);
 
     if (indexPath.row == self.images.count - 1) {
         [cell.registButton setHidden:NO];
@@ -236,7 +235,7 @@ static NSString *identifier = @"Cell";
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     
-    self.pageControl.currentPage = (scrollView.contentOffset.x / WDcreenBounds.size.width);
+    self.pageControl.currentPage = (scrollView.contentOffset.x / kScreenWidth);
 }
 
 - (void)nextButtonHandler:(id)sender {
