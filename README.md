@@ -28,8 +28,11 @@ NSMutableArray *paths = [NSMutableArray new];
 ##就能轻松的创建引导页了
 
 ###可以书写 delegate 方法 （现版本默认有两个按钮登录和注册）
+
 //点了注册按钮的事件
+
 (void)wdguideRegisterBtnClick:(UIButton *)btn 
 
 //点击登录按钮的事件
+
 (void)wdguideLoginBtnClick:(UIButton *)btn
