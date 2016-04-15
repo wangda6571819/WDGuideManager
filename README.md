@@ -5,7 +5,8 @@
 ![](https://github.com/wangda6571819/WDGuideManager/blob/master/3.png)
 
 ###非常容易使用只需要 
-###里面有展示的demo 
+###在你的工程文件中 写明 pod 'WDGuideManager', :git => 'https://github.com/wangda6571819/WDGuideManager.git'
+###里面有展示的demo  使用前需要 import "WDGuideManager.h"
 
 NSMutableArray *paths = [NSMutableArray new];
 
