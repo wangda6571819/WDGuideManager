@@ -20,7 +20,7 @@
 
 @interface WDGuideManager : NSObject
 
-@property (weak , nonatomic)id <WDGuideManagerDelegate> delegate;
+@property (copy , nonatomic)id <WDGuideManagerDelegate> delegate;
 
 + (instancetype)shared;
 
