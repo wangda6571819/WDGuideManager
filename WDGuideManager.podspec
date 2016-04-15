@@ -10,5 +10,5 @@ Pod::Spec.new do |s|
   s.author             = { "wangda" => "514335620@qq.com" }
   s.platform     = :ios
   s.source       = { :git => "https://github.com/wangda6571819/WDGuideManager.git",:tag => "v1.0.1" }
-  s.source_files  = "WDGuideManager/WDGuideManager/*.{h，m}"
+  s.source_files  = "WDGuideManager/WDGuideManager/*.{h,m}"
 end
