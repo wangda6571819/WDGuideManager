@@ -36,3 +36,5 @@ NSMutableArray *paths = [NSMutableArray new];
 //点击登录按钮的事件
 
 (void)wdguideLoginBtnClick:(UIButton *)btn
+
+如果有什么意见或者建议,请与我联系  514335620@qq.com 
